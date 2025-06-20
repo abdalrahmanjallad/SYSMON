@@ -45,15 +45,16 @@ cd C:\Sysmon
 Check logs in:
 Event Viewer → Applications and Services Logs → Microsoft → Windows → Sysmon → Operational
 
-##💻 Step 2: Set Up the Alert Script
-###1. Create a Working Directory
+## 💻 Step 2: Set Up the Alert Script
+### 1. Create a Working Directory
 ```powershell
 mkdir C:\SysmonAlert
 ```
-###2. Move Your PowerShell Script
+### 2. Download the app.ps file from this repo
+### 3. Move Your PowerShell Script
 Place your app.ps1 in `C:\SysmonAlert`.
 
-###3. Edit Email Settings in app.ps1
+### 4. Edit Email Settings in app.ps1
 Update the following fields with your Gmail details:
 
 ```powershell
@@ -62,14 +63,14 @@ $EmailTo = "recipient@gmail.com"
 $EmailUser = "your@gmail.com"
 $EmailPassword = "your_app_password"  # Use App Password!
 ```
-###📧 Step 3: Gmail App Password Setup
-####1. Enable 2-Step Verification
+### 📧 Step 3: Gmail App Password Setup
+#### 1. Enable 2-Step Verification
 Go to:
 `https://myaccount.google.com/security`
 
 Enable 2-Step Verification under "Signing in to Google".
 
-####2. Generate App Password
+#### 2. Generate App Password
 In the same Security settings, go to App passwords
 
 Choose:
@@ -86,7 +87,7 @@ Paste it into the `$EmailPassword` field (no spaces)
 
 ✅ This secures your script with Gmail’s SMTP.
 
-##🏃‍♂️ Step 4: Run the Alert Script
+## 🏃‍♂️ Step 4: Run the Alert Script
 Open PowerShell as Administrator:
 
 ```powershell
@@ -97,7 +98,7 @@ Expected output:
 ```powershell
 [+] Monitoring for elevated PowerShell sessions...
 ```
-##🧪 Step 5: Test the Alert
+## 🧪 Step 5: Test the Alert
 Open a new PowerShell window as Administrator:
 
 ```powershell
