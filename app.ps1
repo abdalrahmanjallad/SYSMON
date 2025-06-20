@@ -1,11 +1,11 @@
 # Email Configuration
-$EmailFrom = "abood.jallad.2001@gmail.com"
-$EmailTo = "abdalrahmanjallad001@gmail.com"
+$EmailFrom = "yourEmail@gmail.com"
+$EmailTo = "userEmail@gmail.com"
 $EmailSubject = "Sysmon Alert Detected!"
 $SmtpServer = "smtp.gmail.com"
 $SmtpPort = 587
-$EmailUser = "abood.jallad.2001@gmail.com"
-$EmailPassword = "jzcclwzgudvhfplo"  # Gmail App Password
+$EmailUser = "yourEmail@gmail.com"
+$EmailPassword = "YourPassword"  # Gmail App Password
 
 # Convert Email Credentials
 $securePass = ConvertTo-SecureString $EmailPassword -AsPlainText -Force
