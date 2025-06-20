@@ -1,4 +1,4 @@
-# 🛡️ Sysmon + PowerShell Email Alert System (Windows Setup Guide)
+# 🛡️ Sysmon + PowerShell Email Alert System
 
 This project sets up a complete incident detection system using **Sysmon** and **PowerShell** on Windows. It watches for **elevated PowerShell usage** (admin-level activity) and sends a **real-time Gmail alert** when triggered.
 
