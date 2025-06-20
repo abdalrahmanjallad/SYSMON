@@ -50,7 +50,7 @@ Event Viewer → Applications and Services Logs → Microsoft → Windows → Sy
 ```powershell
 mkdir C:\SysmonAlert
 ```
-### 2. Download the app.ps file from this repo
+### 2. Download the `app.ps` file from this repo
 ### 3. Move Your PowerShell Script
 Place your app.ps1 in `C:\SysmonAlert`.
 
