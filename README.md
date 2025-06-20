@@ -1,44 +1,41 @@
-# 🛡️ Sysmon Alerting System with PowerShell + Email Notifications
+# 🛡️ Sysmon + PowerShell Email Alert System (Windows Setup Guide)
 
-This project is a lightweight incident detection system using **Sysmon** (System Monitor by Microsoft) and a custom **PowerShell script**. It monitors for **elevated PowerShell usage** (e.g., attackers running PowerShell as administrator) and sends **real-time email alerts** when such events occur.
-
----
-
-## 🚀 Features
-
-- 🧠 Monitors Sysmon logs for suspicious activity
-- ⚠️ Detects high-integrity PowerShell sessions
-- 📩 Sends email alerts with detailed information
-- 🔐 Secure Gmail-based SMTP (with 2FA & app passwords)
-- 🛠️ Easily customizable for different detection patterns
+This project sets up a complete incident detection system using **Sysmon** and **PowerShell** on Windows. It watches for **elevated PowerShell usage** (admin-level activity) and sends a **real-time Gmail alert** when triggered.
 
 ---
 
-## 📦 Requirements
+## ✅ Prerequisites
 
-- 🖥️ Windows 10/11 or Server
-- 🐚 PowerShell 5.1+ (default on modern Windows)
-- 🧰 [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon)
-- 📧 Gmail account with:
-  - 2FA enabled
-  - App password created
+- 🖥️ Windows 10 or 11 (Admin access required)
+- 📥 PowerShell 5.1+ (installed by default)
+- 🔐 Gmail account with:
+  - 2-Step Verification (2FA) enabled
+  - App Password created
 
 ---
 
-## 🛠️ Installation Guide
+## 🧰 Step 1: Download & Install Sysmon
 
-### 1️⃣ Install Sysmon
+### 1. Download Sysmon
 
-1. Download Sysmon from the official Microsoft site:  
-   👉 https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
+📦 Get it here:  
+https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon
 
-2. Extract `Sysmon64.exe` or `Sysmon.exe` to `C:\Sysmon`
+- Extract the contents (e.g., `Sysmon64.exe`) to:  
+  `C:\Sysmon`
 
-3. Use a Sysmon config (e.g., from SwiftOnSecurity):  
-   👉 https://github.com/SwiftOnSecurity/sysmon-config
+### 2. Download a Configuration File
 
-4. Install Sysmon with the config (run as Administrator):
+Use a community config like SwiftOnSecurity's:  
+https://github.com/SwiftOnSecurity/sysmon-config
+
+- Download the `sysmonconfig-export.xml` file
+- Move it to `C:\Sysmon`
+
+### 3. Install Sysmon
+
+Open **PowerShell as Administrator** and run:
 
 ```powershell
 cd C:\Sysmon
-.\Sysmon64.exe -accepteula -i sysmonconfig.xml
+.\Sysmon64.exe -accepteula -i sysmonconfig-export.xml
